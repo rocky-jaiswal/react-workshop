@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AnotherGreeting = () => (
-  <h1>Hello there...</h1>
+  <h1>Hello World...</h1>
 )
 
 export default AnotherGreeting
