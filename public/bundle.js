@@ -950,10 +950,31 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var someComponent = function someComponent(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    props.items.map(function (item, idx) {
+      return _react2.default.createElement(
+        'p',
+        { id: idx },
+        item.name
+      );
+    })
+  );
+};
+
 _reactDom2.default.render(_react2.default.createElement(
-  'h1',
+  'div',
   null,
-  'Hello, world!'
+  _react2.default.createElement(
+    'p',
+    null,
+    'Hi'
+  ),
+  someComponent({
+    items: [{ name: 'foo' }, { name: 'bar' }]
+  })
 ), document.getElementById('root'));
 
 /***/ }),
