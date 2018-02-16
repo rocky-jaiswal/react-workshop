@@ -1,23 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Greeting from './Greeting';
+import Messages from './Messages';
 
-const someComponent = (props) => (
-  <div>
-    {props.items.map((item, idx) => (
-      <p id={idx}>{item.name}</p>
-    ))}
-  </div>
-)
+const messages = [
+    { name: 'foo' },
+    { name: 'bar' }
+]
 
 ReactDOM.render(
   <div>
-    <p>Hello JSX</p>
-    {someComponent({
-      items: [
-        { name: 'foo' },
-        { name: 'bar' }
-      ]
-    })}
+    <Greeting />
+    <Messages messages={messages}/>
   </div>,
   document.getElementById('root')
 )
