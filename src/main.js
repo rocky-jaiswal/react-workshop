@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Greeting from './Greeting';
-import Messages from './Messages';
+
+import Clock from './Clock'
 
 const messages = [
     { name: 'foo' },
@@ -9,9 +9,6 @@ const messages = [
 ]
 
 ReactDOM.render(
-  <div>
-    <Greeting />
-    <Messages messages={messages}/>
-  </div>,
+  <Clock />,
   document.getElementById('root')
 )
