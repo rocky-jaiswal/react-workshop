@@ -1,14 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import { setDate } from './redux/app/actions';
 
 class Clock extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {date: new Date()}
-  }
 
   componentDidMount () {
     this.timerID = setInterval(
-      () => this.tick(),
+      () => this.props.setDate(new Date()),
       1000
     )
   }
@@ -17,19 +16,28 @@ class Clock extends React.Component {
     clearInterval(this.timerID)
   }
 
-  tick () {
-    this.setState((prevState) => ({
-      date: new Date()
-    }))
-  }
-
   render () {
     return (
       <div>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>It is {this.props.currentDate.toLocaleTimeString()}.</h2>
       </div>
     )
   }
 }
 
-export default Clock
+const mapStateToProps = state => {
+  return {
+    currentDate: state.app.currentDate
+  }
+}
+ 
+const mapDispatchToProps = dispatch => {
+  return {
+    setDate: (payload) => dispatch(setDate(payload))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Clock)
