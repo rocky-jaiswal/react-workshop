@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import Clock from './Clock'
+import App from './App'
 
 const messages = [
     { name: 'foo' },
@@ -9,6 +10,8 @@ const messages = [
 ]
 
 ReactDOM.render(
-  <Clock />,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
   document.getElementById('root')
 )

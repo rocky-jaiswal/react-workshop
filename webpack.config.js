@@ -8,6 +8,9 @@ const htmlPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
   watch: true,
+  devServer: {
+    historyApiFallback: true
+  },
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'public'),
