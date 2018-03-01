@@ -11,7 +11,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true
   },
-  entry: './src/main.js',
+  entry: ['babel-polyfill', './src/main.js'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'

@@ -23,10 +23,7 @@ export function setDate (payload) {
 }
 
 export function addCounterAsync () {
-  return (dispatch) => {
-    setTimeout(() => {
-      // Yay! Can invoke sync or async actions with `dispatch`
-      dispatch(addCounter())
-    }, 2000)
+  return {
+    type: ADD_COUNTER_ASYNC
   }
 }
