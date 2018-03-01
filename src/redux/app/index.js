@@ -10,9 +10,6 @@ const selectUiReducer = (state = initialState, action) => {
     case ADD_COUNTER: {
       return { counter: state.counter + 1 }
     }
-    case ADD_COUNTER_ASYNC: {
-      return { counter: state.counter + 1 }
-    }
     case DEC_COUNTER: {
       return { counter: state.counter - 1 }
     }
