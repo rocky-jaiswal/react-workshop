@@ -26,7 +26,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     inc: () => dispatch(addCounter()),
-    incAsync: () => addCounterAsync(dispatch),
+    incAsync: () => dispatch(addCounterAsync()),
     dec: () => dispatch(decrementCounter())
   }
 }

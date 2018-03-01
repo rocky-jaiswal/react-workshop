@@ -22,9 +22,11 @@ export function setDate (payload) {
   }
 }
 
-export function addCounterAsync (dispatch) {
-  setTimeout(() => {
-    // Yay! Can invoke sync or async actions with `dispatch`
-    dispatch(addCounter())
-  }, 2000)
+export function addCounterAsync () {
+  return (dispatch) => {
+    setTimeout(() => {
+      // Yay! Can invoke sync or async actions with `dispatch`
+      dispatch(addCounter())
+    }, 2000)
+  }
 }
